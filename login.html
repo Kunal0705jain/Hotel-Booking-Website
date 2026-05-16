@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kli Login</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+  background: #f5f5f5;
+}
+
+.main-container {
+  height: 100vh;
+}
+
+.left-section {
+  background: #fff;
+  padding: 30px 80px;
+  border-right: 1px solid #ddd;
+}
+
+.left-section p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.left-section img {
+  border-radius: 4px;
+}
+
+/* join-benefit */
+.join-benefit img{
+    height: 120px;
+    object-fit: cover;
+}
+.right-section {
+  background: #f7f7f7;
+  padding: 60px 80px;
+  margin-top: 80px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid #ccc;
+}
+.tab {
+  padding: 15px;
+  cursor: pointer;
+  color: #999;
+}
+.tab.active {
+  color: #dfa974;
+  border-bottom: 2px solid #b89b5e;
+}
+
+/* Phone Input */
+.phone-box {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+}
+
+/* Dropdown */
+.country-dropdown {
+  position: relative;
+  cursor: pointer;
+  padding-right: 10px;
+}
+
+.selected {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.selected img {
+  width: 20px;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 220px;
+  display: none;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.dropdown-list div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  cursor: pointer;
+}
+.dropdown-list div:hover {
+  background: #eee;
+}
+
+.dropdown-list img {
+  width: 20px;
+}
+
+/* Input */
+.phone-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+}
+
+/* Button */
+.gold-btn {
+  background: #dfa974;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  margin-top: 20px;
+}
+
+/* Hide */
+.hidden {
+  display: none;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+  <div class="row h-100">
+
+    <!-- LEFT -->
+    <div class="col-md-6 left-section">
+
+  <!-- Logo -->
+  <div class="text-center">
+    <a href="./index.html">
+    <img src="img/logo.png" style="width:100px; border-radius: 35px 15px;">
+    </a>
+  </div>
+
+  <div class="text-center mt-3" style="letter-spacing:2px;">
+    NOT A MEMBER? JOIN NOW
+  </div>
+
+  <div class="text-center mt-2">
+    <img src="img/login/neo.avif" class="img-fluid" style="max-width: 150px;">
+  </div>
+
+  <div class="text-center mt-2 mb-3">
+    MEMBER BENEFITS
+  </div>
+
+  <!-- BENEFITS GRID -->
+  <div class="row g-4">
+
+    <div class="col-6 join-benefit">
+      <img src="img/login/1.jpg" class="img-fluid">
+      <p>Exclusive Member Rates</p>
+    </div>
+
+    <div class="col-6 join-benefit">
+      <img src="img/login/2.jpg" class="img-fluid">
+      <p>Special Offers for Dining & Spas</p>
+    </div>
+
+    <div class="col-6 join-benefit">
+      <img src="img/login/3.jpg" class="img-fluid">
+      <p>Upto 8% NeuCoins</p>
+    </div>
+
+    <div class="col-6 join-benefit">
+      <img src="img/login/4.jpg" class="img-fluid">
+      <p>Earn & Redeem across stays</p>
+    </div>
+
+  </div>
+
+  <!-- BUTTON -->
+  <div class="text-center mt-4">
+    <button class="gold-btn">JOIN NOW</button>
+  </div>
+
+</div>
+
+    <!-- RIGHT -->
+    <div class="col-md-6 right-section">
+    <div class="close-btn" onclick="goHome()">✕</div>
+      <h5 class="mb-5 text-center">ALREADY A MEMBER? LOGIN</h5>
+
+      <!-- Tabs -->
+      <div class="tabs my-3">
+        <div class="tab active" onclick="switchTab('mobile', this)">MOBILE NUMBER</div>
+        <div class="tab" onclick="switchTab('email', this)">EMAIL ADDRESS</div>
+        <div class="tab" onclick="switchTab('member', this)">MEMBERSHIP NUMBER</div>
+      </div>
+
+      <!-- MOBILE -->
+      <div id="mobile" class="mt-4">
+
+        <div class="phone-box">
+
+          <!-- DROPDOWN -->
+          <div class="country-dropdown" onclick="toggleDropdown()">
+
+            <div class="selected" id="selectedCountry">
+              <img src="https://flagcdn.com/w20/in.png">
+              <span>+91</span>
+            </div>
+
+            <div class="dropdown-list" id="dropdown">
+              <div onclick="selectCountry('in','+91')">
+                <img src="https://flagcdn.com/w20/in.png"> India (+91)
+              </div>
+              <div onclick="selectCountry('us','+1')">
+                <img src="https://flagcdn.com/w20/us.png"> USA (+1)
+              </div>
+              <div onclick="selectCountry('gb','+44')">
+                <img src="https://flagcdn.com/w20/gb.png"> UK (+44)
+              </div>
+              <div onclick="selectCountry('ae','+971')">
+                <img src="https://flagcdn.com/w20/ae.png"> UAE (+971)
+              </div>
+            </div>
+
+          </div>
+
+          <!-- INPUT -->
+          <input type="text" class="phone-input" placeholder="Enter mobile number" id="mobileInput">
+
+        </div>
+
+        <small id="error" class="text-danger"></small>
+
+      </div>
+
+      <!-- EMAIL -->
+      <div id="email" class="mt-4 hidden">
+        <input type="email" class="form-control" placeholder="Enter email">
+      </div>
+
+      <!-- MEMBER -->
+      <div id="member" class="mt-4 hidden">
+        <input type="text" class="form-control" placeholder="Enter membership number">
+      </div>
+
+      <div class="form-check mt-4">
+  <input class="form-check-input" type="checkbox" id="agreeCheck">
+  <label class="form-check-label" style="font-size:13px; color:#666;">
+    By continuing you agree to the <b>Terms of Use</b> and <b>Privacy Policy</b>
+  </label>
+</div>
+
+<!-- <div class="text-center mt-5">
+  <img src="https://via.placeholder.com/100x40?text=Chambers" style="margin:10px;">
+  <img src="https://via.placeholder.com/100x40?text=NeuPass" style="margin:10px;">
+  <img src="https://via.placeholder.com/100x40?text=Epicure" style="margin:10px;">
+</div> -->
+<div class="text-center mt-4">
+      <button class="gold-btn" onclick="validate()">CONTINUE</button>
+</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+
+// close button
+function goHome() {
+  window.location.href = "./index.html";  // change if your homepage name is different
+}
+
+/* TAB SWITCH */
+function switchTab(tab, el) {
+  document.getElementById('mobile').classList.add('hidden');
+  document.getElementById('email').classList.add('hidden');
+  document.getElementById('member').classList.add('hidden');
+
+  document.getElementById(tab).classList.remove('hidden');
+
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+/* DROPDOWN */
+function toggleDropdown() {
+  let d = document.getElementById("dropdown");
+  d.style.display = d.style.display === "block" ? "none" : "block";
+}
+
+function selectCountry(code, dial) {
+  document.getElementById("selectedCountry").innerHTML =
+    `<img src="https://flagcdn.com/w20/${code}.png"> <span>${dial}</span>`;
+
+  document.getElementById("dropdown").style.display = "none";
+}
+
+/* CLOSE OUTSIDE */
+document.addEventListener("click", function(e) {
+  if (!e.target.closest(".country-dropdown")) {
+    document.getElementById("dropdown").style.display = "none";
+  }
+});
+
+/* VALIDATION */
+function validate() {
+  let mobile = document.getElementById("mobileInput").value;
+  let agree = document.getElementById("agreeCheck").checked;
+
+  if (!agree) {
+    document.getElementById("error").innerText = "Please accept Terms & Conditions";
+    return;
+  }
+
+  if (mobile.length !== 10 || isNaN(mobile)) {
+    document.getElementById("error").innerText = "Enter valid number";
+    return;
+  }
+
+  alert("Success ✅");
+}
+
+</script>
+
+</body>
+</html>

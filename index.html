@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Kli Template" />
+    <meta name="keywords" content="Kli, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kli</title>
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Flatpickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+
+  <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+      <i class="icon_menu"></i>
+    </div>
+    <div class="offcanvas-menu-wrapper">
+      <div class="canvas-close">
+        <i class="icon_close"></i>
+      </div>
+      <div class="logo mb-3">
+                <a href="./index.html">
+                  <img src="img/logo.png" alt="" />
+                </a>
+              </div>
+      <div class="search-icon search-switch">
+        <i class="icon_search"></i>
+      </div>
+      <nav class="mainmenu mobile-menu">
+        <ul>
+          <li class="active"><a href="./index.html">Home</a></li>
+          <li><a href="./rooms.html">Rooms</a></li>
+          <li><a href="./gallery.html">Gallery</a></li>
+          <li><a href="./about-us.html">About Us</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./blog.html">News</a></li>
+        </ul>
+        <div class="nav-right mt-5">
+                  <button
+                    class="btn btn-orange"
+                    data-bs-toggle="modal"
+                    data-bs-target="#bookingModal"
+                  >
+                    BOOK A STAY
+                  </button>
+                </div>
+      </nav>
+      <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu Section End -->
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+      <div class="menu-item">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="logo">
+                <a href="./index.html">
+                  <img src="img/logo.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div class="nav-menu">
+                <nav class="mainmenu">
+                  <ul>
+                    <li class="active"><a href="./index.html">Home</a></li>
+                    <li><a href="./rooms.html">Rooms</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./about-us.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                    <li><a href="./blog.html">News</a></li>
+                    <li><a href="./login.html">LOGIN / JOIN</a></li>
+                  </ul>
+                </nav>
+                <div class="nav-right search-switch">
+                  <i class="icon_search"></i>
+                </div>
+                <div class="nav-right">
+                  <button
+                    class="btn btn-orange"
+                    data-bs-toggle="modal"
+                    data-bs-target="#bookingModal"
+                  >
+                    BOOK A STAY
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- book now button -->
+    <div class="modal fade" id="bookingModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="text-end">
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Destination -->
+          <label class="label">GO TO</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Find a Hotel or Destination"
+          />
+
+          <!-- Date -->
+          <label class="label">CHECK IN & CHECK OUT</label>
+          <input type="text" id="datePicker" class="form-control" />
+
+          <!-- Rooms -->
+          <label class="label">ROOMS & GUESTS</label>
+
+          <div class="box">
+            <!-- Summary -->
+            <div class="summary" onclick="toggleDropdown()">
+              <span id="summaryText">1 Adult, 0 Child - 1 Room</span>
+              <span>⌄</span>
+            </div>
+
+            <!-- Dropdown -->
+            <div id="roomDropdown" class="dropdown-box">
+              <div id="roomsContainer"></div>
+              <div class="add-room" onclick="addRoom()">ADD MORE ROOMS</div>
+            </div>
+          </div>
+
+          <!-- Special Code -->
+          <label class="label">SPECIAL CODE</label>
+          <div class="d-flex gap-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Special Code"
+            />
+            <button class="btn btn-purple">SEARCH</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let rooms = [{ adults: 1, children: 0 }];
+
+      // Toggle dropdown
+      function toggleDropdown() {
+        let box = document.getElementById("roomDropdown");
+        box.style.display = box.style.display === "none" ? "block" : "none";
+      }
+
+      // Render rooms
+      function renderRooms() {
+        let container = document.getElementById("roomsContainer");
+        container.innerHTML = "";
+
+        rooms.forEach((room, index) => {
+          container.innerHTML += `
+      <div class="room">
+        <div class="room-title">
+          ROOM ${index + 1}
+          ${index > 0 ? `<span onclick="removeRoom(${index})" style="cursor:pointer;">✕</span>` : ""}
+        </div>
+
+        <div class="counter-box">
+
+          <div class="counter">
+            <button onclick="changeValue(${index}, 'adults', -1)">−</button>
+            ${room.adults} Adult
+            <button onclick="changeValue(${index}, 'adults', 1)">+</button>
+          </div>
+
+          <div class="counter">
+            <button onclick="changeValue(${index}, 'children', -1)">−</button>
+            ${room.children} Child
+            <button onclick="changeValue(${index}, 'children', 1)">+</button>
+          </div>
+
+        </div>
+      </div>
+    `;
+        });
+
+        updateSummary();
+      }
+
+      // Add room
+      function addRoom() {
+        rooms.push({ adults: 1, children: 0 });
+        renderRooms();
+      }
+
+      // Remove room
+      function removeRoom(index) {
+        rooms.splice(index, 1);
+        renderRooms();
+      }
+
+      // Change values
+      function changeValue(index, type, value) {
+        let room = rooms[index];
+
+        if (type === "adults") {
+          room.adults = Math.max(1, room.adults + value);
+        }
+
+        if (type === "children") {
+          room.children = Math.max(0, room.children + value);
+        }
+
+        renderRooms();
+      }
+
+      // Update summary
+      function updateSummary() {
+        let totalAdults = rooms.reduce((sum, r) => sum + r.adults, 0);
+        let totalChildren = rooms.reduce((sum, r) => sum + r.children, 0);
+
+        document.getElementById("summaryText").innerText =
+          `${totalAdults} Adults, ${totalChildren} Child - ${rooms.length} Rooms`;
+      }
+
+      // Date Picker
+      document.addEventListener("DOMContentLoaded", function () {
+        flatpickr("#datePicker", {
+          mode: "range",
+          minDate: "today",
+          dateFormat: "d M Y",
+          defaultDate: [new Date(), new Date().fp_incr(1)],
+        });
+      });
+
+      // Init
+      renderRooms();
+    </script>
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="hero-text">
+              <h1>Kli A Luxury Hotel</h1>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
+            <div class="booking-form">
+              <h3>Book Now</h3>
+              <form action="#">
+                <div class="check-date">
+                  <label for="date-in">Check In:</label>
+                  <input type="text" class="date-input" id="date-in" />
+                  <i class="icon_calendar"></i>
+                </div>
+                <div class="check-date">
+                  <label for="date-out">Check Out:</label>
+                  <input type="text" class="date-input" id="date-out" />
+                  <i class="icon_calendar"></i>
+                </div>
+                <div class="select-option">
+                  <label for="guest">Guests:</label>
+                  <select id="guest">
+                    <option value="">2 Adults</option>
+                    <option value="">3 Adults</option>
+                  </select>
+                </div>
+                <div class="select-option">
+                  <label for="room">Room:</label>
+                  <select id="room">
+                    <option value="">1 Room</option>
+                    <option value="">2 Room</option>
+                  </select>
+                </div>
+                <button type="submit">Check Availability</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slider owl-carousel">
+        <div class="hs-item set-bg" data-setbg="img/hero/1.avif"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/2.avif"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/3.avif"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/4.avif"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/5.avif"></div>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Us Section Begin -->
+    <section class="aboutus-section spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-text">
+              <div class="section-title">
+                <h2>LUXURY IN THE HEART OF THE HILLS</h2>
+              </div>
+              <p class="f-para">
+                Kli.com is a leading online accommodation site. We’re passionate
+                about travel. Every day, we inspire and reach millions of
+                travelers across 90 local websites in 41 languages.
+              </p>
+              <p class="s-para">
+                So when it comes to booking the perfect hotel, vacation rental,
+                resort, apartment, guest house, or tree house, we’ve got you
+                covered.
+              </p>
+              <a href="#" class="primary-btn about-btn">Read More</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-pic">
+              <div class="row">
+                <div class="col-sm-12">
+                  <img src="img/about/lux.avif" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Us Section End -->
+
+    <!-- Services Section End -->
+    <section class="services-section spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title">
+              <h2>AMENITIES & FACILITIES</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-sm-6">
+            <div class="service-item">
+              <!-- <i class="flaticon-036-parking"></i> -->
+              <img src="img/facilities/hotel.png" alt="hotel" />
+              <h4>Hotel</h4>
+              <ul id="list">
+                <li>Accessibility for differently-abled</li>
+                <li>Car Rental</li>
+                <li>Concierge</li>
+                <li>Currency Exchange</li>
+                <li>Doctor on Call</li>
+
+                <li class="more">EV charging stations</li>
+                <li class="more">Earth check certified</li>
+                <li class="more">Evening entertainment</li>
+                <li class="more">Games Room</li>
+                <li class="more">Laundry and Drycleaning</li>
+                <li class="more">Limousine/ Yacht transfers on request</li>
+                <li class="more">Multi-lingual Staff</li>
+                <li class="more">Onsite Shopping</li>
+                <li class="more">Outdoor banquet spaces</li>
+                <li class="more">Smoking Lounge</li>
+                <li class="more">Standard & premium Wi-Fi</li>
+                <li class="more">Travel Desk</li>
+                <li class="more">Vehicle parking</li>
+              </ul>
+              <span id="toggleText" onclick="toggle()">...more</span>
+
+              <!-- more less -->
+              <script>
+                function toggle() {
+                  let items = document.querySelectorAll(".more");
+                  let text = document.getElementById("toggleText");
+
+                  items.forEach(function (item) {
+                    if (item.style.display === "list-item") {
+                      item.style.display = "none";
+                      text.innerHTML = "...more";
+                    } else {
+                      item.style.display = "list-item";
+                      text.innerHTML = "...less";
+                    }
+                  });
+                }
+              </script>
+              <!-- more less -->
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="service-item">
+              <!-- <i class="flaticon-033-dinner"></i> -->
+              <img src="img/facilities/dining.png" alt="dining" />
+              <h4>Dining</h4>
+              <ul>
+                <li>Amrit Sagar (Stylish Bar)</li>
+                <li>Jharokha (24-hour Multi-Cuisine Restaurant)</li>
+                <li>Bhairo (Fine-Dining European Restaurant)</li>
+                <li>Neel Kamal (Fine-Dining Rajasthani, Indian Restaurant)</li>
+                <li>24-hour in-room dining</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="service-item">
+              <!-- <i class="flaticon-026-bed"></i> -->
+              <img src="img/facilities/wellness.png" alt="" />
+              <h4>Wellness</h4>
+              <ul>
+                <li>Heated swimming pool</li>
+                <li>J Wellness Circle Spa</li>
+                <li>Outdoor swimming pool</li>
+                <li>State-of-the-art fitness centre</li>
+                <li>Yoga instructor</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+            <div class="service-item">
+              <!-- <i class="flaticon-024-towel"></i> -->
+              <img src="img/facilities/rooms.png" alt="rooms" />
+              <h4>Rooms</h4>
+              <ul>
+                <li>Butler service</li>
+                <li>Interconnecting rooms (subject to availability)</li>
+                <li>Mini-Bar</li>
+                <li>Smoking and non-smoking rooms (subject to availability)</li>
+                <li>24/7 in-room dining</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Home Room Section Begin -->
+    <section class="hp-room-section">
+      <div class="container-fluid">
+        <div class="hp-room-items">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div
+                class="hp-room-item set-bg"
+                data-setbg="img/room/superior.avif"
+              >
+                <div class="hr-text">
+                  <h3>Superior Room</h3>
+                  <h2>5000/<i class="bi bi-currency-rupee"></i></h2>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="r-o">Size:</td>
+                        <td>28 Sq. Mt.</td>
+                      </tr>
+                      <tr>
+                        <td class="r-o">Capacity:</td>
+                        <td>Up to 3 guests. Max adults: 2, Max children: 1</td>
+                      </tr>
+                      <tr>
+                        <td class="r-o">Bed:</td>
+                        <td>King</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#superiorModal"
+                    class="primary-btn"
+                    >ROOM DETAILS</a
+                  >
+                  <div class="modal fade" id="superiorModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content p-4">
+                        <!-- Close Button -->
+                        <div class="text-end">
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+
+                        <!-- Title -->
+                        <h4 class="text-center mb-3">Superior Room King Bed</h4>
+
+                        <!-- Description -->
+                        <p class="text-center">
+                          The superior rooms at Vivanta Ahmedabad are replete
+                          with parquet flooring and décor that reflects the
+                          cultural appeal of Ahmedabad.
+                        </p>
+
+                        <!-- Room Info -->
+                        <div
+                          class="d-flex justify-content-center gap-4 my-3 flex-wrap"
+                        >
+                          <span>📐 28 Sq. Mt.</span>
+                          <span>🛏 King</span>
+                          <span>👨‍👩‍👧 Up to 3 guests</span>
+                        </div>
+
+                        <hr />
+
+                        <!-- Amenities -->
+                        <h5 class="mb-3">Services & Amenities</h5>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <ul>
+                              <li>Tea/coffee maker</li>
+                              <li>Smoking & non-smoking rooms</li>
+                              <li>Daily housekeeping</li>
+                              <li>Laundry services</li>
+                            </ul>
+                          </div>
+
+                          <div class="col-md-6">
+                            <ul>
+                              <li>Dual-line telephones</li>
+                              <li>24-hour dining</li>
+                              <li>Swimming pool access</li>
+                              <li>Free Wi-Fi</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="hp-room-item set-bg" data-setbg="img/room/delux.avif">
+                <div class="hr-text">
+                  <h3>Deluxe Room</h3>
+                  <h2>10000/<i class="bi bi-currency-rupee"></i></h2>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="r-o">Size:</td>
+                        <td>48 Sq. Mt.</td>
+                      </tr>
+                      <tr>
+                        <td class="r-o">Capacity:</td>
+                        <td>Up to 4 guests. Max adults: 3, Max children: 1</td>
+                      </tr>
+                      <tr>
+                        <td class="r-o">Bed:</td>
+                        <td>King</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deluxModal"
+                    class="primary-btn"
+                    >ROOM DETAILS</a
+                  >
+                  <div class="modal fade" id="deluxModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content p-4">
+                        <!-- Close Button -->
+                        <div class="text-end">
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+
+                        <!-- Title -->
+                        <h4 class="text-center mb-3">Deluxe Room King Bed</h4>
+
+                        <!-- Description -->
+                        <p class="text-center">
+                          Spacious, well-designed suite rooms comprising a
+                          designated living area and airy bathrooms. Deluxe
+                          suites are an exclusive retreat for small families and
+                          business executives alike.
+                        </p>
+
+                        <!-- Room Info -->
+                        <div
+                          class="d-flex justify-content-center gap-4 my-3 flex-wrap"
+                        >
+                          <span>📐 48 Sq. Mt.</span>
+                          <span>🛏 King</span>
+                          <span
+                            >👨‍👩‍👧 Up to 4 guests. Max adults: 3, Max children:
+                            1</span
+                          >
+                        </div>
+
+                        <hr />
+
+                        <!-- Amenities -->
+                        <h5 class="mb-3">Services & Amenities</h5>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <ul>
+                              <li>Standard Wi-Fi for 4 devices</li>
+                              <li>Electronic safe</li>
+                              <li>Doctor on-call (charges apply)</li>
+                              <li>Bath amenities</li>
+                              <li>Smart TV</li>
+                              <li>Baby crib on request</li>
+                            </ul>
+                          </div>
+
+                          <div class="col-md-6">
+                            <ul>
+                              <li>Tea/coffee maker</li>
+                              <li>Minibar (charges apply)</li>
+                              <li>Bottled water</li>
+                              <li>Treat yourself cabinet</li>
+                              <li>Concierge services (chargeable)</li>
+                              <li>Grazing stations</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div
+                class="hp-room-item set-bg"
+                data-setbg="img/room/premium.avif"
+              >
+                <div class="hr-text">
+                  <h3>Premium Suite</h3>
+                  <h2>15000/<i class="bi bi-currency-rupee"></i></h2>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="r-o">Size:</td>
+                        <td>58 Sq. Mt.</td>
+                      </tr>
+                      <tr>
+                        <td class="r-o">Capacity:</td>
+                        <td>Up to 4 guests. Max adults: 3, Max children: 1</td>
+                      </tr>
+                      <tr>
+                        <td class="r-o">Bed:</td>
+                        <td>King</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#premiumModal"
+                    class="primary-btn"
+                    >ROOM DETAILS</a
+                  >
+                  <div class="modal fade" id="premiumModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content p-4">
+                        <!-- Close -->
+                        <div class="text-end">
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+
+                        <!-- Title -->
+                        <h4 class="text-center mb-3">Premium Suite</h4>
+
+                        <!-- Description -->
+                        <p class="text-center">
+                          Overlooking Ahmedabad from a zoomed-out lens, the
+                          premium suite is all things indulgent. Featuring a
+                          powder room, a living area and a spacious master
+                          bathroom, every suite is a personification of modern
+                          style.
+                        </p>
+
+                        <!-- Room Info -->
+                        <div
+                          class="d-flex justify-content-center gap-4 my-3 flex-wrap"
+                        >
+                          <span>📐 58 Sq. Mt.</span>
+                          <span>🛏 King</span>
+                          <span
+                            >👨‍👩‍👧 Up to 4 guests. Max adults: 3, Max children:
+                            1</span
+                          >
+                        </div>
+
+                        <!-- Highlight -->
+                        <p class="highlight-text">
+                          ✦ Generous suites with a well-appointed living area
+                          and four-fixture baths
+                        </p>
+
+                        <hr />
+
+                        <!-- Amenities -->
+                        <h5 class="mb-3">Services & Amenities</h5>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <ul>
+                              <li>Standard Wi-Fi for 4 devices</li>
+                              <li>Electronic safe</li>
+                              <li>Doctor on-call (charges apply)</li>
+                              <li>Bath amenities</li>
+                              <li>Four-fixture bathroom</li>
+                              <li>Bath Tub</li>
+                              <li>12-hour laundry services (charges apply)</li>
+                            </ul>
+                          </div>
+
+                          <div class="col-md-6">
+                            <ul>
+                              <li>Tea/coffee maker</li>
+                              <li>Minibar (charges apply)</li>
+                              <li>Bottled water</li>
+                              <li>Treat yourself cabinet</li>
+                              <li>Smart TV</li>
+                              <li>Baby crib on request</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div
+                class="hp-room-item set-bg"
+                data-setbg="img/room/presidential.avif"
+              >
+                <div class="hr-text">
+                  <h3>Presidential Suite</h3>
+                  <h2>20000/<i class="bi bi-currency-rupee"></i></h2>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="r-o">Size:</td>
+                        <td>163 Sq. Mt.</td>
+                      </tr>
+                      <tr>
+                        <td class="r-o">Capacity:</td>
+                        <td>Up to 4 guests. Max adults: 3, Max children: 1</td>
+                      </tr>
+                      <tr>
+                        <td class="r-o">Bed:</td>
+                        <td>King</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#presidentialModal"
+                    class="primary-btn"
+                    >ROOM DETAILS</a
+                  >
+                  <div class="modal fade" id="presidentialModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content p-4">
+                        <!-- Close -->
+                        <div class="text-end">
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+
+                        <!-- Title -->
+                        <h4 class="text-center mb-3">Presidential Suite I</h4>
+
+                        <!-- Description -->
+                        <p class="text-center">
+                          An expansive one-bedroom presidential suite with
+                          state-of-the-art amenities ensures a stay that takes
+                          ordinary life up a notch. The modern bathroom is
+                          complete with an inviting bathtub, while the dining
+                          room is perfect for relaxing and enjoying your meals.
+                        </p>
+
+                        <!-- Room Info -->
+                        <div
+                          class="d-flex justify-content-center gap-4 my-3 flex-wrap"
+                        >
+                          <span>📐 163 Sq. Mt.</span>
+                          <span>🛏 King</span>
+                          <span
+                            >👨‍👩‍👧 Up to 4 guests. Max adults: 3, Max children:
+                            1</span
+                          >
+                        </div>
+
+                        <!-- Highlight -->
+                        <p class="highlight-text">
+                          ✦ Spacious suites with an exclusive living room,
+                          dining room, walk-in wardrobes and three-fixture baths
+                        </p>
+
+                        <hr />
+
+                        <!-- Amenities -->
+                        <h5 class="mb-3">Services & Amenities</h5>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <ul>
+                              <li>Standard Wi-Fi for 6 devices</li>
+                              <li>Electronic safe</li>
+                              <li>Doctor on-call (charges apply)</li>
+                              <li>Bath amenities</li>
+                              <li>Walk-in wardrobe</li>
+                              <li>Smart TV</li>
+                              <li>Bath Tub</li>
+                              <li>12 hours Laundry Service</li>
+                            </ul>
+                          </div>
+
+                          <div class="col-md-6">
+                            <ul>
+                              <li>Tea/coffee maker</li>
+                              <li>Minibar (charges apply)</li>
+                              <li>Bottled water</li>
+                              <li>Treat yourself cabinet</li>
+                              <li>Four-fixture bathroom</li>
+                              <li>Concierge services (chargeable)</li>
+                              <li>Baby crib on request</li>
+                              <li>Grazing station</li>
+                              <li>Powder room</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Home Room Section End -->
+
+    <!-- Blog Section Begin -->
+    <section class="blog-section spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title">
+              <span>Hotel News</span>
+              <h2>Our Blog & Event</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="blog-item set-bg" data-setbg="img/blog/1.avif">
+              <div class="bi-text">
+                <h4>
+                  <a href="#"
+                    >Unexplored Beaches in Karnataka for Solitude Lovers</a
+                  >
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="blog-item set-bg" data-setbg="img/blog/2.avif">
+              <div class="bi-text">
+                <h4>
+                  <a href="#">Goa Itinerary for 3 Days Sun, Sand and Luxury</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="blog-item set-bg" data-setbg="img/blog/3.avif">
+              <div class="bi-text">
+                <h4>
+                  <a href="#">Best Time to Visit Dubai for Every Season</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div
+              class="blog-item small-size set-bg"
+              data-setbg="img/blog/4.avif"
+            >
+              <div class="bi-text">
+                <h4>
+                  <a href="#"
+                    >Plan Your Kerela Escape Best Time to Visit and Essential
+                    Tips</a
+                  >
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div
+              class="blog-item small-size set-bg"
+              data-setbg="img/blog/5.avif"
+            >
+              <div class="bi-text">
+                <h4>
+                  <a href="#"
+                    >3-Daya Coorg Itinerary Nature, Culture and Calm</a
+                  >
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div
+              class="blog-item small-size set-bg"
+              data-setbg="img/blog/6.avif"
+            >
+              <div class="bi-text">
+                <h4><a href="#">Cochin Sightseeing: Escape of Elegance</a></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Blog Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-text">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="ft-about">
+                <div class="logo">
+                  <a href="#">
+                    <img src="img/logo.png" alt="" />
+                  </a>
+                </div>
+                <p>
+                  We inspire and reach millions of travelers<br />
+                  across 90 local websites
+                </p>
+                <div class="fa-social">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-tripadvisor"></i></a>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                  <a href="#"><i class="fa fa-youtube-play"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 offset-lg-1">
+              <div class="ft-contact">
+                <h6>Contact Us</h6>
+                <ul>
+                  <li>(+91) 8796325140</li>
+                  <li>info.kli@gmail.com</li>
+                  <li>407, Gangor Ghat, lake pichola, Udaipur</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 offset-lg-1">
+              <div class="ft-newslatter">
+                <h6>New latest</h6>
+                <p>Get the latest updates and offers.</p>
+                <form action="#" class="fn-form">
+                  <input type="text" placeholder="Email" />
+                  <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-option">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <ul>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Terms of use</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Environmental Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-5">
+              <div class="co-text">
+                <p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch"><i class="icon_close"></i></div>
+        <form class="search-model-form">
+          <input type="text" id="search-input" placeholder="Search here....." />
+        </form>
+      </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </body>
+</html>
