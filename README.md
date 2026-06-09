@@ -1,0 +1,1 @@
+Developed a responsive hotel booking website featuring hotel listings, booking forms, interactive UI components, and mobile-friendly design. Built using HTML5, CSS3, JavaScript, and Bootstrap with a focus on user experience and responsive design.
